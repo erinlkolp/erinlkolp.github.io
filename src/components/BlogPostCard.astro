@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+export interface Props {
+  post: CollectionEntry<"blog">;
+}
+
+const { post } = Astro.props;
+const date = post.data.pubDate.toISOString().slice(0, 10);
+---
+
+<article class="mb-4 font-mono">
+  <a href={`/blog/${post.slug}/`} class="block hover:underline">
+    <span class="text-fgMuted">{date}</span>
+    <span class="text-accentGreen mx-2">·</span>
+    <span class="text-fg">{post.data.title}</span>
+  </a>
+  <p class="text-sm text-fgMuted mt-1">{post.data.description}</p>
+</article>
