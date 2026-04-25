@@ -1,0 +1,30 @@
+---
+import type { Project } from "../lib/projects";
+import { displayDescription } from "../lib/projects";
+
+export interface Props {
+  project: Project;
+}
+
+const { project } = Astro.props;
+const desc = displayDescription(project);
+const pushed = project.pushedAt
+  ? project.pushedAt.toISOString().slice(0, 10)
+  : "—";
+const stars = project.stars ?? "—";
+const lang = project.language ?? "—";
+---
+
+<article class="border border-border rounded-md p-4 mb-4 bg-bgAlt">
+  <header class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-2">
+    <a
+      href={project.htmlUrl}
+      class="font-mono text-base font-medium text-accentGreen hover:underline"
+      rel="noopener"
+    >
+      {project.name}
+    </a>
+    <span class="font-mono text-xs text-fgMuted">{lang} · {stars}★ · pushed {pushed}</span>
+  </header>
+  <p class="text-fg">{desc || "(no description)"}</p>
+</article>
