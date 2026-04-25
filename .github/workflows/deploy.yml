@@ -37,6 +37,7 @@ jobs:
             --no-progress
             --offline
             --include-fragments
+            --root-dir ${{ github.workspace }}/dist
             'dist/**/*.html'
           fail: true
       - uses: actions/upload-pages-artifact@v3
