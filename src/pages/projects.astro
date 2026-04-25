@@ -1,0 +1,16 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PromptLine from "../components/PromptLine.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import { getProjects } from "../lib/projects";
+
+const projects = await getProjects();
+---
+
+<BaseLayout title="projects · erinlkolp" description="Curated GitHub projects.">
+  <PromptLine as="h1" command="ls -la projects/" />
+  {projects.length === 0 && (
+    <p class="text-fgMuted">No featured projects yet. Add entries to <code>src/data/projects.ts</code>.</p>
+  )}
+  {projects.map((p) => <ProjectCard project={p} />)}
+</BaseLayout>
