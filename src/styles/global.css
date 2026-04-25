@@ -1,0 +1,32 @@
+@import "@fontsource/jetbrains-mono/400.css";
+@import "@fontsource/jetbrains-mono/500.css";
+@import "@fontsource/jetbrains-mono/700.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body {
+  background-color: theme("colors.bg");
+  color: theme("colors.fg");
+  font-family: theme("fontFamily.mono");
+}
+
+a {
+  color: theme("colors.accent");
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+::selection {
+  background-color: theme("colors.accent");
+  color: theme("colors.bg");
+}
