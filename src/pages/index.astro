@@ -6,7 +6,7 @@ import BlogPostCard from "../components/BlogPostCard.astro";
 import { getProjects } from "../lib/projects";
 import { getCollection } from "astro:content";
 
-const projects = (await getProjects()).slice(0, 3);
+const projects = (await getProjects()).slice(0, 4);
 const posts = (await getCollection("blog", ({ data }) => !data.draft))
   .sort((a, b) => b.data.pubDate.getTime() - a.data.pubDate.getTime())
   .slice(0, 3);
@@ -22,7 +22,7 @@ const posts = (await getCollection("blog", ({ data }) => !data.draft))
   </section>
 
   <section class="mb-10">
-    <PromptLine as="h2" command="ls -1 projects/ | head -3" />
+    <PromptLine as="h2" command="ls -1 projects/ | head -4" />
     {projects.length === 0 && (
       <p class="text-fgMuted">No featured projects yet.</p>
     )}
