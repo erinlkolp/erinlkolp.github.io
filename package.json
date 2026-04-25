@@ -15,7 +15,7 @@
   "dependencies": {
     "@astrojs/check": "^0.9.4",
     "@astrojs/mdx": "^3.1.9",
-    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/sitemap": "3.2.1",
     "@astrojs/tailwind": "^5.1.4",
     "@fontsource/jetbrains-mono": "^5.1.1",
     "astro": "^4.16.18",
