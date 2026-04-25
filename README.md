@@ -1,6 +1,6 @@
 # erinlkolp-website
 
-Personal site at https://becausefuckyouthatswhy.org. Built with Astro,
+Personal site at https://erinlkolp.com. Built with Astro,
 deployed to GitHub Pages.
 
 ## Local dev
