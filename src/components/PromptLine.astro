@@ -1,0 +1,18 @@
+---
+export interface Props {
+  /** The command part shown after the prompt, e.g. "ls projects/". */
+  command: string;
+  /** Custom prompt prefix; defaults to "erinlkolp@web ~ $ ". */
+  prompt?: string;
+  /** Optional heading level wrapper (1-6). Defaults to no wrapper (a span). */
+  as?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+}
+
+const { command, prompt = "erinlkolp@web ~ $", as } = Astro.props;
+const Tag = as ?? "div";
+---
+
+<Tag class="font-mono text-sm sm:text-base mb-4">
+  <span class="text-accent">{prompt}</span>{" "}
+  <span class="text-fg">{command}</span>
+</Tag>

@@ -1,0 +1,10 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PromptLine from "../components/PromptLine.astro";
+---
+
+<BaseLayout title="404 · erinlkolp" description="Page not found.">
+  <PromptLine as="h1" command={`cat ${Astro.url.pathname}`} />
+  <p class="text-fg">cat: {Astro.url.pathname}: No such file or directory</p>
+  <p class="mt-4"><a href="/">$ cd /</a></p>
+</BaseLayout>

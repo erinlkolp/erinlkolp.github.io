@@ -1,0 +1,18 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import PromptLine from "../components/PromptLine.astro";
+---
+
+<BaseLayout title="about · erinlkolp" description="About Erin Kolp.">
+  <PromptLine as="h1" command="cat about.md" />
+  <div class="prose prose-invert max-w-none text-fg">
+    <p>
+      I'm Erin. I write code for a living and also for fun, which is a
+      suspicious overlap.
+    </p>
+    <p>
+      This site is the place I park my projects, occasional writing, and
+      whatever else I want to keep on the public internet.
+    </p>
+  </div>
+</BaseLayout>

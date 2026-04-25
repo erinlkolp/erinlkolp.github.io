@@ -1,0 +1,34 @@
+---
+const links = [
+  { href: "/", label: "home" },
+  { href: "/projects", label: "projects" },
+  { href: "/blog", label: "blog" },
+  { href: "/about", label: "about" },
+];
+
+const path = Astro.url.pathname;
+function isActive(href: string): boolean {
+  if (href === "/") return path === "/";
+  return path === href || path.startsWith(`${href}/`);
+}
+---
+
+<header class="border-b border-border">
+  <nav class="max-w-3xl mx-auto px-4 sm:px-6 py-4 flex flex-wrap items-center gap-x-4 gap-y-2 font-mono text-sm">
+    <span class="text-accent">erinlkolp@web ~ $</span>
+    <span class="text-fg">cd</span>
+    {
+      links.map((l) => (
+        <a
+          href={l.href}
+          class:list={[
+            "hover:underline",
+            isActive(l.href) ? "text-accentGreen" : "text-fg",
+          ]}
+        >
+          {l.label}
+        </a>
+      ))
+    }
+  </nav>
+</header>
