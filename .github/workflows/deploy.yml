@@ -30,6 +30,15 @@ jobs:
       - run: npm run build
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Check internal links
+        uses: lycheeverse/lychee-action@v2
+        with:
+          args: >-
+            --no-progress
+            --offline
+            --include-fragments
+            'dist/**/*.html'
+          fail: true
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
