@@ -10,7 +10,10 @@ export type ProjectEntry = {
  * Display order on the site matches the order of this array.
  */
 export const FEATURED: ProjectEntry[] = [
-  // Add entries like: { repo: "some-repo", blurb: "Optional one-liner" },
+  { repo: "vu1-dial-python-module" },
+  { repo: "alexa-plex-music-player-skill" },
+  { repo: "erin-slack-notes-bot" },
+  { repo: "liquibase-percona-mysql-docker-demo" },
 ];
 
 export const GITHUB_OWNER = "erinlkolp";
