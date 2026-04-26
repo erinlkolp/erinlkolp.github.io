@@ -1,0 +1,26 @@
+---
+title: "Posts can have images now"
+description: "The blog template grew a PostImage component. Drop a file in src/assets/blog/<slug>/ and it shows up in a terminal frame."
+pubDate: 2026-04-26
+tags: ["meta"]
+---
+
+import PostImage from "../../components/PostImage.astro";
+
+Short note: posts can carry images now. Each post gets its own folder under
+`src/assets/blog/<slug>/`, and a small `<PostImage>` wrapper renders them
+inside an ASCII terminal frame so they stay on-brand.
+
+<PostImage
+  slug="posts-with-images"
+  src="prompt.png"
+  alt="Green dollar-prompt text on the site's dark background reading 'posts with images'"
+  caption="hello, pixels"
+/>
+
+The wrapper hands the file to Astro's `<Image>` under the hood, so you get
+responsive sizing and modern formats for free. Missing files fail the build
+loudly — no silently broken `<img>` tags shipping to production.
+
+To start a new post, copy `_template.mdx`, drop images in the matching
+asset folder, and flip `draft: false` when ready.
