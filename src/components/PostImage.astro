@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+export interface Props {
+  slug: string;
+  src: string;
+  alt: string;
+  caption?: string;
+}
+
+const { slug, src, alt, caption } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/assets/blog/**/*.{jpg,jpeg,png,gif,webp,avif,svg}",
+);
+
+const key = `/src/assets/blog/${slug}/${src}`;
+const loader = images[key];
+
+if (!loader) {
+  throw new Error(`Image not found: src/assets/blog/${slug}/${src}`);
+}
+
+const image = (await loader()).default;
+const captionText = caption ?? src;
+
+const fill = "─".repeat(120);
+---
+
+<figure class="my-6 font-mono text-fgMuted text-sm">
+  <div class="flex items-center whitespace-nowrap overflow-hidden">
+    <span>┌─ {src} ─</span>
+    <span class="flex-1 overflow-hidden">{fill}</span>
+    <span>─┐</span>
+  </div>
+  <div class="border-l border-r border-fgMuted px-2 py-2">
+    <Image src={image} alt={alt} class="w-full h-auto" />
+  </div>
+  <div class="flex items-center whitespace-nowrap overflow-hidden">
+    <span>└─ {captionText} ─</span>
+    <span class="flex-1 overflow-hidden">{fill}</span>
+    <span>─┘</span>
+  </div>
+</figure>
