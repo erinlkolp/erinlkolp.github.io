@@ -1,0 +1,25 @@
+---
+title: "Post title goes here"
+description: "One-sentence summary for SEO and post cards."
+pubDate: 2026-04-26
+tags: ["tag-one"]
+draft: true
+---
+
+import PostImage from "../../components/PostImage.astro";
+
+Write your post here. Standard markdown works: **bold**, _italics_, `code`,
+[links](https://example.com), lists, headings, blockquotes.
+
+To embed an image, drop the file into `src/assets/blog/<this-post-slug>/`
+and reference it like this:
+
+<PostImage
+  slug="REPLACE-WITH-POST-SLUG"
+  src="example.png"
+  alt="Describe the image for screen readers"
+  caption="Optional caption — defaults to filename"
+/>
+
+You can use the component multiple times. Supported formats:
+jpg, jpeg, png, gif, webp, avif, svg.
