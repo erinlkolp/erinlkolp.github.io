@@ -7,7 +7,17 @@ tags: ["meta", "drobo", "homenet"]
 
 import PostImage from "../../components/PostImage.astro";
 
-This is a test This is a test This is a test This is a test This is a test This is a test This is a test This is a test This is a test This is a test This is a test 
+This is a test This is a test This is a test This is a test This is a test.
+
+I have a music collection that I've been curating for quite a while and use
+it with a Plex server to provide tunes to the whole house. The Plex server
+runs on my "Trashcan" Mac Pro and the folders are network shares from our
+aging Drobo NAS. I've been putting off purchasing a new NAS as this was working
+fine for the longest time... that was where I failed.
+
+Just the other day, I noticed the NAS disks were offline but yet the Drobo 
+reported the status as okay with no disk failures, degredation, or raid disk
+rebuilds.
 
 <PostImage
   slug="nas-failure-lesson-learned"
@@ -16,9 +26,14 @@ This is a test This is a test This is a test This is a test This is a test This 
   caption="Drobo Looks Okay, Right?"
 />
 
-The wrapper hands the file to Astro's `<Image>` under the hood, so you get
-responsive sizing and modern formats for free. Missing files fail the build
-loudly — no silently broken `<img>` tags shipping to production.
+All of a sudden, the Drobo management software wouldn't find or connect to
+the NAS. My stomach dropped - I knew what this meant. I brought the Drobo
+inside and tried a direct USB connection. Nada. Zilch. Uh oh. Not only did
+the Drobo store the music collection, it also held my Apple TimeMachine
+backups.
+
+After much wrangling, I was left with a non-functional NAS and a sour taste
+in my mouth. It was all gone. All of it. With no warning.
 
 <PostImage
   slug="nas-failure-lesson-learned"
@@ -27,5 +42,9 @@ loudly — no silently broken `<img>` tags shipping to production.
   caption="Zero connectivity to the network and usb."
 />
 
-To start a new post, copy `_template.mdx`, drop images in the matching
-asset folder, and flip `draft: false` when ready.
+And there went my collection. I was holding off on replacing it because it
+was working well with narry the hint of what was brewing.
+
+Don't be like me. Get a new nas, load it with disks, and maybe purchase a
+second backup disk just in case. :(
+
