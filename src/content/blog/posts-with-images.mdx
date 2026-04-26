@@ -1,8 +1,8 @@
 ---
-title: "Posts can have images now"
-description: "The blog template grew a PostImage component. Drop a file in src/assets/blog/<slug>/ and it shows up in a terminal frame."
+title: "Backup Failure"
+description: "My backups failed and I lost all of my music. It's a sad day in the Kolp household."
 pubDate: 2026-04-26
-tags: ["meta"]
+tags: ["meta", "drobo", "homenet"]
 ---
 
 import PostImage from "../../components/PostImage.astro";
@@ -12,10 +12,10 @@ Short note: posts can carry images now. Each post gets its own folder under
 inside an ASCII terminal frame so they stay on-brand.
 
 <PostImage
-  slug="posts-with-images"
-  src="prompt.png"
-  alt="Green dollar-prompt text on the site's dark background reading 'posts with images'"
-  caption="hello, pixels"
+  slug="backup-failure-learned-lesson"
+  src="drobo_seems_okay.jpeg"
+  alt="Drobo Looks Okay, But Has Secretly Failed"
+  caption="Drobo Looks Okay, Right?"
 />
 
 The wrapper hands the file to Astro's `<Image>` under the hood, so you get
