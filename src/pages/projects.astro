@@ -2,15 +2,23 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import PromptLine from "../components/PromptLine.astro";
 import ProjectCard from "../components/ProjectCard.astro";
-import { getProjects } from "../lib/projects";
+import { getProjectGroups } from "../lib/projects";
 
-const projects = await getProjects();
+const groups = await getProjectGroups();
+const total = groups.reduce((n, g) => n + g.projects.length, 0);
 ---
 
 <BaseLayout title="projects · erinlkolp" description="Curated GitHub projects.">
   <PromptLine as="h1" command="ls -la projects/" />
-  {projects.length === 0 && (
+  {total === 0 && (
     <p class="text-fgMuted">No featured projects yet. Add entries to <code>src/data/projects.ts</code>.</p>
   )}
-  {projects.map((p) => <ProjectCard project={p} />)}
+  {groups.map((group) => (
+    <section class="mb-8">
+      <h2 class="font-mono text-sm text-accentYellow mb-3">
+        <span class="text-fgMuted">./</span>{group.name}
+      </h2>
+      {group.projects.map((p) => <ProjectCard project={p} />)}
+    </section>
+  ))}
 </BaseLayout>
