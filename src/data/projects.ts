@@ -5,15 +5,43 @@ export type ProjectEntry = {
   blurb?: string;
 };
 
+export type ProjectGroupEntry = {
+  /** Section heading shown on the projects page. */
+  name: string;
+  entries: ProjectEntry[];
+};
+
 /**
- * Curated, ordered list of repos to feature on the site.
- * Display order on the site matches the order of this array.
+ * Curated, ordered list of repo groups to feature on the site.
+ * Section order matches this array; card order matches each `entries` array.
  */
-export const FEATURED: ProjectEntry[] = [
-  { repo: "vu1-dial-python-module" },
-  { repo: "alexa-plex-music-player-skill" },
-  { repo: "erin-slack-notes-bot" },
-  { repo: "liquibase-percona-mysql-docker-demo" },
+export const GROUPS: ProjectGroupEntry[] = [
+  {
+    name: "Google Glass",
+    entries: [
+      { repo: "google-glass-notifications" },
+      { repo: "google-glass-gesture-launcher" },
+      { repo: "google-glass-spotify-widget" },
+      { repo: "google-glass-copy-photos" },
+    ],
+  },
+  {
+    name: "VU Dials",
+    entries: [
+      { repo: "vu-dials-module" },
+      { repo: "vu-dials-gem" },
+    ],
+  },
+  {
+    name: "Bots, MCP & Languages",
+    entries: [
+      { repo: "erin-slack-notes-bot" },
+      { repo: "discord-mcp-server" },
+      { repo: "recallnest" },
+      { repo: "charlottelang" },
+      { repo: "alexa-plex-music-player-skill" },
+    ],
+  },
 ];
 
 export const GITHUB_OWNER = "erinlkolp";
