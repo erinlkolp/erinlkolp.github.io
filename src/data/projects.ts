@@ -44,7 +44,6 @@ export const GROUPS: ProjectGroupEntry[] = [
     name: "Bots, MCP & Languages",
     entries: [
       { repo: "erin-slack-notes-bot" },
-      { repo: "discord-mcp-server" },
       { repo: "recallnest" },
       { repo: "charlottelang" },
       { repo: "alexa-plex-music-player-skill" },
