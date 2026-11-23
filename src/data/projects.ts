@@ -17,6 +17,13 @@ export type ProjectGroupEntry = {
  */
 export const GROUPS: ProjectGroupEntry[] = [
   {
+    name: "OLPC XO-1",
+    entries: [
+      { repo: "xo1-ereader" },
+      { repo: "erin-browser" },
+    ],
+  },
+  {
     name: "Google Glass",
     entries: [
       { repo: "google-glass-notifications" },
@@ -30,16 +37,30 @@ export const GROUPS: ProjectGroupEntry[] = [
     entries: [
       { repo: "vu-dials-module" },
       { repo: "vu-dials-gem" },
+      { repo: "VU-Server" },
     ],
   },
   {
     name: "Bots, MCP & Languages",
     entries: [
       { repo: "erin-slack-notes-bot" },
-      { repo: "discord-mcp-server" },
       { repo: "recallnest" },
       { repo: "charlottelang" },
       { repo: "alexa-plex-music-player-skill" },
+    ],
+  },
+  {
+    name: "Infra / DevOps",
+    entries: [
+      { repo: "liquibase-percona-mysql-docker-demo" },
+      { repo: "chef-aws-storage-gateway-kvm" },
+      { repo: "ansible-aws-storage-gateway-kvm" },
+    ],
+  },
+  {
+    name: "Keyboards",
+    entries: [
+      { repo: "zmk-config-xiao" },
     ],
   },
 ];
